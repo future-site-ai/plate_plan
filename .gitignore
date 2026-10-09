@@ -1,0 +1,71 @@
+# SQLite databases and WAL journal files
+*.sqlite
+*.sqlite3
+*.db
+*.sqlite-wal
+*.sqlite-shm
+*.db-wal
+*.db-shm
+!data/.gitkeep
+
+# Environment & credentials
+.env
+.env.backup
+.env.local
+.env.*.local
+!.env.example
+
+# Dependencies
+/vendor/
+composer.phar
+node_modules/
+
+# Logs and debug files
+*.log
+logs/
+error_log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Caches, test & build outputs
+.cache/
+.npm/
+dist/
+build/
+coverage/
+.phpunit.result.cache
+.php-cs-fixer.cache
+
+# Temporary & backup files
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+
+# Operating System files
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDE & Editor files
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.sublime-project
+*.sublime-workspace

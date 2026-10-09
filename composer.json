@@ -1,0 +1,28 @@
+{
+    "name": "plate-plan/plate-plan",
+    "description": "Plate Plan · Weekly meal planner with smart grocery list and ingredient management",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Haidar Anbar"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "ext-pdo": "*",
+        "ext-pdo_sqlite": "*",
+        "neuron-core/neuron-ai": "^4.1",
+        "vlucas/phpdotenv": "^5.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "allow-plugins": {}
+    }
+}

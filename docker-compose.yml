@@ -1,0 +1,19 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: plate_plan_app
+    restart: unless-stopped
+    ports:
+      - "1111:80"
+    volumes:
+      - .:/var/www/html
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html/public
+      - DB_PATH=/var/www/html/data/diet.sqlite
+    env_file:
+      - path: .env.local
+        required: false
+      - path: .env
+        required: false
