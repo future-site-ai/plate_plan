@@ -57,6 +57,7 @@ plate_plan/
 │   ├── fixture.php             # Seed recipes with standardized ingredient units
 │   ├── MCP/
 │   │   └── McpServer.php       # JSON-RPC 2.0 Model Context Protocol server
+│   ├── request_guard.php       # Blocks cross-site requests and DNS rebinding (no login, so this matters)
 │   └── Services/
 │       ├── AiAgentService.php  # Neuron AI agent with tool calling & evaluation
 │       ├── PlatePlanService.php# Domain business logic (meals, plan, groceries)
@@ -296,6 +297,17 @@ You can configure any MCP client (such as Claude Desktop, Cursor, or Antigravity
 }
 ```
 
+### 🔒 Request protection
+
+Plate Plan has no login, so it blocks requests that come from **other websites** open in your browser (cross-site requests and DNS rebinding). Desktop MCP clients, `curl` and scripts are not affected. Two settings in `.env.local` relax this when you need to:
+
+| Setting | When to use it |
+|---|---|
+| `PLATE_PLAN_ALLOWED_HOSTS` | You open Plate Plan from another device or name, e.g. `192.168.1.20` or `plate-plan.local` (comma-separated). |
+| `PLATE_PLAN_ALLOWED_ORIGINS` | A browser-based tool must call the API or MCP server, e.g. the MCP Inspector: `http://localhost:6274`. |
+
+Plate Plan is meant for your own computer or home network. **Do not expose it to the internet** without a VPN or a reverse proxy with authentication. See [SECURITY.md](SECURITY.md).
+
 ---
 
 ## 📡 REST & JSON API Endpoints
@@ -348,6 +360,10 @@ Ingredient quantities in [`src/fixture.php`](src/fixture.php) and the UI are sta
 The grocery list automatically consolidates numeric amounts that share the same unit!
 
 ---
+
+## 🤝 Contributing
+
+Contributions are welcome! Bug reports, ideas, docs and code all help. Read **[CONTRIBUTING.md](CONTRIBUTING.md)** to get started, and look for issues labelled [`good first issue`](https://github.com/future-site-ai/plate_plan/labels/good%20first%20issue).
 
 ## 📄 License
 

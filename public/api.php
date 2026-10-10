@@ -12,19 +12,14 @@
 declare(strict_types=1);
 
 require_once __DIR__ . '/../src/db.php';
+require_once __DIR__ . '/../src/request_guard.php';
 
 use App\Services\PlatePlanService;
 use App\Services\AiAgentService;
 
-header('Content-Type: application/json; charset=UTF-8');
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: GET, POST, DELETE, OPTIONS');
-header('Access-Control-Allow-Headers: Content-Type, Authorization');
+plate_plan_guard_request();
 
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    http_response_code(204);
-    exit;
-}
+header('Content-Type: application/json; charset=UTF-8');
 
 $rawInput = file_get_contents('php://input');
 $jsonInput = json_decode($rawInput, true);

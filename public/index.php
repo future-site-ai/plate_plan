@@ -15,6 +15,10 @@ if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
 }
 
 require_once __DIR__ . '/../src/db.php';
+require_once __DIR__ . '/../src/request_guard.php';
+
+// Following a link to the page is fine; AJAX calls must come from Plate Plan itself.
+plate_plan_guard_request(allowNavigation: true);
 
 
 /* ════════════════════════════════════════════════════════════
