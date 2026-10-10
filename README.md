@@ -11,6 +11,14 @@ A modern web application for organizing weekly meals, planning nutrition, managi
 
 ![Plate Plan weekly dashboard](docs/screenshots/dashboard.png)
 
+## 🎬 Videos
+
+<!-- After creating the playlist: replace PLAYLIST_ID with the ID of the Plate Plan playlist (https://www.youtube.com/playlist?list=PLAYLIST_ID).
+     To show a different video here, replace qJLkjwNRvgg (twice) with that video's ID. -->
+[![Watch the Plate Plan demo on YouTube](https://img.youtube.com/vi/qJLkjwNRvgg/maxresdefault.jpg)](https://www.youtube.com/watch?v=qJLkjwNRvgg)
+
+▶️ **[All Plate Plan videos on YouTube](https://www.youtube.com/playlist?list=PLDDixiPOk0k4)**: demos, guides and updates.
+
 ---
 
 ## ✨ Features
